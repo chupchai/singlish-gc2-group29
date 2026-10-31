@@ -1,33 +1,111 @@
-# Getting Started with Python
+# Singlish Accent Classification, Transcription & Lexicon Correction
 
-This baseline project shows how to get the most out of [Python](http://ipython.org)
-on Cloudera Data Science Workbench.
+A speech system for Singaporean English. An audio clip is passed through a
+three-stage **cascade**:
 
-## Files
+1. **Accent gate** — a supervised classifier (SVM / logistic regression / random
+   forest, plus a hybrid feature-fusion model) decides whether the speaker is
+   using Singaporean English.
+2. **Transcription** — if a Singaporean-English accent is detected, a fine-tuned
+   Whisper-small model (`whisper-small-mnsc-sg-15k-heldout`) transcribes the clip.
+3. **Singlish lexicon correction** — the transcript is corrected and expanded
+   against a LanceDB vector database of Singlish terms, particles, and acronyms,
+   using phonetic (double-metaphone) and semantic (embedding) matching.
 
-Modify the default files to get started with your own project.
+The web UI shows the classification result and a **before/after** view of the
+transcript so the lexicon's effect is visible.
 
-* `README.md` -- This project's readme in Markdown format.
-* `analysis.py` -- An example Python analysis script.
-* `requirements.txt` -- Dependencies that need to be manually installed if you
-  are running analysis.py in ML Runtimes (not necessary if you are using Legacy
-  Engines).
-* `cdsw-build.sh` -- A custom build script used for models and experiments. This
-will pip install our dependencies, primarily the scikit-learn library.
-* `fit.py` -- A model training example to be run as an experiment. Generates the
-model.pkl file that contains the fitted parameters of our model.
-* `predict.py` --  A sample function to be deployed as a model. Uses `model.pkl`
-produced by `fit.py` to make predictions about petal width.
+## Repository layout
 
-## Instructions for Sessions
-1. Click "Open Workbench".
-2. Launch a new Python session.
-3. Run `analysis.py` in the workbench.
+```
+Singlish/                 # the application
+  mvp/                    # FastAPI app, models loader, transcription, features
+    app.py                # endpoints: /api/classify, /api/transcribe, /api/health
+    static/               # vanilla HTML/CSS/JS front end
+    models/               # model artifacts (NOT in git — see "Models" below)
+  build_lexicon.py        # builds the LanceDB lexicon from the JSON
+  lexicon_lookup.py       # phonetic + semantic lookup / correction
+  singlish_lexicon.json   # the Singlish lexicon source (tracked)
+  run_app.py              # launcher for the hosted (Kubernetes) application
+```
 
-## Instructions for Experiments and Models
-1. Click "Open Workbench".
-2. Run an experiment with `fit.py` as the input script.
-3. Once the experiment is complete, save the `model.pkl` file to the project.
-4. Deploy a model using `predict.py`. Specify `predict` as the input function.
+> **Models and caches are intentionally excluded from git** (see `.gitignore`).
+> They are too large for a normal repository and are distributed separately.
 
-For detailed instructions on how to run these scripts, see the [documentation](https://docs.cloudera.com/machine-learning/cloud/models/topics/ml-creating-and-deploying-a-model.html).
+## Prerequisites
+
+- Python 3.10+
+- ~3 GB free disk and ~2–3 GB free RAM (CPU is fine; no GPU required)
+- Internet access on first run (to download the stock `openai/whisper-base.en`
+  encoder used by the fusion model)
+
+## Setup
+
+### 1. Create a virtual environment and install dependencies
+
+```bash
+cd Singlish
+python3 -m venv .venv && source .venv/bin/activate
+pip install fastapi uvicorn torch torchaudio transformers \
+            sentence-transformers lancedb metaphone librosa joblib numpy soundfile
+```
+
+### 2. Download the models
+
+The model artifacts are published as release assets. Download the three archives
+and unzip them **from the `Singlish/` folder** so they land in `mvp/models/`:
+
+```bash
+# from the Singlish/ directory
+curl -LO <release-url>/ml.zip            # svm_65_c_261024.joblib + metadata
+curl -LO <release-url>/ensemble.zip      # fusion_svm_c_261029.joblib + metadata
+curl -LO <release-url>/transcription.zip # whisper-small-mnsc-sg-15k-heldout/
+unzip -o ml.zip && unzip -o ensemble.zip && unzip -o transcription.zip
+rm ml.zip ensemble.zip transcription.zip
+```
+
+Verify (each line should list the file):
+
+```bash
+ls mvp/models/svm_65_c_261024.joblib
+ls mvp/models/fusion_svm_c_261029.joblib
+ls mvp/models/whisper-small-mnsc-sg-15k-heldout/config.json
+```
+
+### 3. Build the Singlish lexicon database
+
+```bash
+# from the Singlish/ directory
+python build_lexicon.py singlish_lexicon.json
+```
+
+This creates the LanceDB table used by the correction stage (default location
+`lexicon_db/`, overridable with the `LEXICON_DB` environment variable).
+
+## Running the app locally
+
+From the `Singlish/` directory, run the API with uvicorn and open the UI:
+
+```bash
+uvicorn mvp.app:app --host 127.0.0.1 --port 8000
+```
+
+Then visit <http://127.0.0.1:8000>. Microphone recording works on `localhost`
+(a secure context); classification, transcription, and the before/after
+lexicon correction are all available from the page.
+
+## Configuration (environment variables)
+
+| Variable | Purpose | Default |
+|---|---|---|
+| `ASR_MODEL_PATH` | Path to the Whisper model folder (must contain `config.json`) | auto-detected at `mvp/models/whisper-small-mnsc-sg-15k-heldout/` |
+| `LEXICON_DB` | Path to the LanceDB lexicon database | `lexicon_db/` (local) |
+| `LEXICON_TABLE` | LanceDB table name | `singlish` |
+| `HF_HUB_OFFLINE` | Set to `1` to run fully offline after the first run | unset |
+
+## Notes
+
+- The first startup downloads `openai/whisper-base.en` (for the fusion model's
+  512-value encoder embedding). After that you can set `HF_HUB_OFFLINE=1`.
+- Do **not** commit models, audio, datasets, caches, or credentials — the
+  `.gitignore` is configured to keep them out.
