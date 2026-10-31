@@ -1,0 +1,5 @@
+variant,clips,recall_pct,misses
+original_raw,3000,97.5,75
+trim_only,3000,97.33333333333334,80
+normalize_only,3000,94.56666666666666,163
+trim_and_normalize,3000,94.69999999999999,159

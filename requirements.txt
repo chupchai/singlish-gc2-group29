@@ -1,0 +1,14 @@
+torch
+transformers>=5.16.1
+accelerate
+scikit-learn==1.9.1          # MUST match the SVM artifact
+numpy==2.5.3                 # match MH's manifest to avoid load errors
+scipy==1.18.1
+librosa==1.0.0               # librosa39-v1 extractor
+soundfile
+lancedb
+sentence-transformers
+Metaphone
+fastapi
+uvicorn
+python-multipart

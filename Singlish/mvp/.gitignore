@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+models/*.joblib
+models/*.npz
+# Local copy of the ASR model (~1 GB)
+models/whisper-*/
+
+# Browser recordings saved during development
+/recordings/
+*.webm
+*.m4a
+*.ogg
+
+# Generated local evaluation and deployment reports
+/verification.json
+/deploy/azure/verification.json

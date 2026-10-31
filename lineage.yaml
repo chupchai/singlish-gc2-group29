@@ -1,0 +1,22 @@
+## lineage.yaml - following examples explains the lineage schema usage
+##
+## NOTE: `metadata` is just an arbitrary key-value map, there are no required keys
+
+## BE *VERY* CAREFUL WHEN EDITING!
+## YAML FILES ARE SUPER SUPER SENSITIVE TO MISTAKES IN WHITESPACE OR ALIGNMENT!
+## visit http://www.yamllint.com/ to validate this file as needed
+
+##Example - Two models with Hive table names and one with metadata
+#
+#modelName1:                              # user-defined key
+#  hive_table_qualified_names:            # system-defined key
+#    - "db.table1@namespace"              # user-defined key
+#    - "db.table2@ns"                     # user-defined key
+#  metadata:                              # system-defined key
+#    key1: value1                         # user-defined key
+#    key2: value2                         # user-defined key
+#    query: "select id, name from table"  # user-defined key
+#    training_file: "fit.py"              # user-defined key
+#modelName2:                              # user-defined key
+#  hive_table_qualified_names:            # system-defined key
+#    - "db.table2@ns"                     # user-defined key

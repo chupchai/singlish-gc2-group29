@@ -1,0 +1,11 @@
+dataset,model,artifact,decision_rule,clips,correct_singapore,false_negatives,singapore_recall_pct
+part1,Latest SVM65,svm_65_calibrated.joblib,calibrated_0.50,3000,2912,88,97.06666666666666
+part1,Latest fusion65,fusion_svm_calibrated.joblib,calibrated_0.50,3000,2941,59,98.03333333333333
+part1,Previous SVM35 (release rule),svm_35_calibrated.joblib,raw_svm,3000,2877,123,95.89999999999999
+part1,Previous fusion35,fusion_svm.joblib,raw_svm,3000,2927,73,97.56666666666666
+part1,Previous SVM35 (calibrated rule),svm_35_calibrated.joblib,calibrated_0.50,3000,2832,168,94.39999999999999
+part2,Latest SVM65,svm_65_calibrated.joblib,calibrated_0.50,3000,1603,1397,53.43333333333333
+part2,Latest fusion65,fusion_svm_calibrated.joblib,calibrated_0.50,3000,2797,203,93.23333333333333
+part2,Previous SVM35 (release rule),svm_35_calibrated.joblib,raw_svm,3000,923,2077,30.766666666666666
+part2,Previous fusion35,fusion_svm.joblib,raw_svm,3000,1283,1717,42.766666666666666
+part2,Previous SVM35 (calibrated rule),svm_35_calibrated.joblib,calibrated_0.50,3000,798,2202,26.6

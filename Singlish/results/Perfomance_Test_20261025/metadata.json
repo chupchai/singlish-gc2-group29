@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-25",
+  "method": "Same fixed 9000 clips, cached features, normalized prepared-input protocol and calibrated p_singapore >= 0.50 rule as 24 October. Frozen joblibs; no fitting or threshold tuning.",
+  "limitation": "25 October models were trained on unnormalized float32 audio; this is a direct comparison on the previous normalized benchmark, not an evaluation of their native preprocessing pipeline. Raw Part 2 and SVM65 preparation ablations are reported separately.",
+  "models": [
+    {
+      "id": "svm39_261025",
+      "name": "25 Oct E1 SVM39",
+      "kind": "acoustic",
+      "generation": "2026-10-25",
+      "path": "E1_Feature_EngineeringV5/outputs/e1_feature_study_accent_40000_no_loudness_norm/svm_calibrated_probability_testing/svm_39_calibrated.joblib",
+      "sha256": "b3220d7dc209892d2b3301c7d2317b582382cd3b11b8786b41f2ad538ce54022",
+      "metadata_sha256": "b818c7632cd0d2d417200192e5de108197e082240bc7cff47e88399702aaedf1"
+    },
+    {
+      "id": "svm65_261025",
+      "name": "25 Oct E1 SVM65",
+      "kind": "acoustic",
+      "generation": "2026-10-25",
+      "path": "E1_Feature_EngineeringV5/outputs/e1_feature_study_accent_40000_no_loudness_norm/svm_calibrated_probability_testing/svm_65_calibrated.joblib",
+      "sha256": "3385149f0bb3811ab8ace81c7c8a0607d8e9e870510420aa8b0758053c0cda70",
+      "metadata_sha256": "2cdb32f2afb40fda4e1f92cb848ad377fab2c0a67084c658b5100d6f2d77b2ef"
+    },
+    {
+      "id": "svm91_261025",
+      "name": "25 Oct E1 SVM91",
+      "kind": "acoustic",
+      "generation": "2026-10-25",
+      "path": "E1_Feature_EngineeringV5/outputs/e1_feature_study_accent_40000_no_loudness_norm/svm_calibrated_probability_testing/svm_91_calibrated.joblib",
+      "sha256": "c3853107da7220f61b79179f1c554ce8686137745e68c53843c0a67ae3998362",
+      "metadata_sha256": "b97aa5ebde30dd2f300e960c84663b7f8d0ca68312423bfda50abc7ae7fd26c1"
+    },
+    {
+      "id": "fusion65_261025",
+      "name": "25 Oct E4 Ensemble",
+      "kind": "fusion",
+      "generation": "2026-10-25",
+      "path": "E1_Feature_EngineeringV5/outputs/whisper_svm_fusion_comparison_40000_no_loudness_norm/calibrated_probability_testing/fusion_svm_calibrated.joblib",
+      "sha256": "024bd91dd81993af8fcc0ef2cf78f8318085698f22b4df133bc388e0381cd394",
+      "metadata_sha256": "35e98926239656711751f25884e28afecceb22eabe195a11ce1ebc3a5bedc085"
+    },
+    {
+      "id": "svm65_261024",
+      "name": "24 Oct E1 SVM65",
+      "kind": "acoustic",
+      "generation": "2026-10-24",
+      "path": "Singlish/mvp/models/svm_65_c_261024.joblib",
+      "sha256": "804197fababe7b29819d7dee73ce3109651d4b17b6bf8417b92729c1de89b5c1",
+      "metadata_sha256": "686cd9bc7bc7f869a83bd98f1e941a1ea31127ae539db71ed60c5f4c0c6dd80f"
+    },
+    {
+      "id": "fusion65_261024",
+      "name": "24 Oct E4 Ensemble",
+      "kind": "fusion",
+      "generation": "2026-10-24",
+      "path": "Singlish/mvp/models/fusion_svm_c_261024.joblib",
+      "sha256": "d2eb00c072bf8c9f2e465ad19e2ec52c214831dcbbc3f871537d023cdcfd589c",
+      "metadata_sha256": "86f6bde819c653dc5cdf6eeac21583ac5766c1e2ac3f19b0c2b994509d9fa646"
+    }
+  ],
+  "dataset_id": "899dd94a72cff7dc6536993ea0c91ce0aed927a80983050b781c0b71d2f0f4ba",
+  "study_splits": "outputs/e1_feature_study_accent_40000_no_loudness_norm/speaker_splits.csv",
+  "study_splits_sha256": "428937b39eb646a41e46b8ee3cdeb86652069802a675575892e6f17e289b8581",
+  "baseline_report": "results/Perfomance_Test_20261024",
+  "baseline_predictions_sha256": "154c9e1e23d02545fae3c151c8ad6b89afeebedb0271bcc18ca327bb5974ea4e",
+  "baseline_summary_sha256": "5194eae6dc832d76b73e48c9952a38d085b389c476e696e2e80cb0292724c378",
+  "baseline_metadata_sha256": "9e0df00da87f5a0c116e5d3e7b99a19322055296c82be5007822c28299c4bcb3",
+  "manifest_report": "results/Perfomance_Test_20261023",
+  "manifest_metadata_sha256": "8f88aaee7c6af6f698a40d2805e9120fa141a82131f8778250f216827d04010e",
+  "feature_cache_sha256": {
+    "mnsc_part1_unseen_3000": "ea201edf8294bcb70b363d712135901b764a7037c4aff7b93140dde6216b1cb1",
+    "mnsc_part2_unseen_3000": "690c5981108b64cfaa676baf7cab44898ddbd647a07bcbb3285f80043a11531f",
+    "cv_unseen_3000": "b557ff4002cc4be10596b4056264838e8d3357bdd722a43db0d6b42d32ad5c32"
+  },
+  "prepared_part2_cache": "outputs/performance_test_20261024_prepared/part2_preprocessing_features.npz",
+  "prepared_part2_cache_sha256": "d3abf9a76e95c3209ccd664de8024a819cc53c883aaccd2c07dac4a0810fd52b",
+  "feature_extractor_sha256": "5ae1ec829801ff5f3340dc64a4b2f1cc9e79de6deb56545637e2b9e92ae5c91f",
+  "notebook_sha256": {
+    "results/E1_Feature_Engineering_20261025/E1_svm_calibrated_probability.ipynb": "ee8398cad2df9a5ef851be6cdffe8b6d41ab124392ee6b08af3e469dff34a134",
+    "results/E1_Feature_Engineering_20261025/E1_acoustic_91_feature_count_comparison.ipynb": "a6aad8f438ee325fe9b323e69f8c7cbf1ba7ebdb0cf11471588a623180e48cff",
+    "results/E1_Feature_Engineering_20261025/E1_speaker_weight_comparison.ipynb": "b31376f108794910b711529f98da108865db7e2950ffcd44344c67ca768b7a2c",
+    "results/E1_Feature_Engineering_20261025/E1_acoustic_feature_count_comparison.ipynb": "8470fa4ce8e6db4fd3fb1704d0d8b4ee5fd0656a6515b6b7f923d1b5d7fe6034",
+    "results/E4_Hybrid_Ensemble_20261025/E4_02_whisper_svm_concatenate.ipynb": "68437540143b91e80def3033f639eb21d8d2bd8df838184f18b606247f21feb3",
+    "results/E4_Hybrid_Ensemble_20261025/E4_03_whisper_svm_calibrated_probability.ipynb": "aa557a455ae789bd6d138a3b1ffb671405a2c3f653e1fb642280499a02f88abb"
+  }
+}

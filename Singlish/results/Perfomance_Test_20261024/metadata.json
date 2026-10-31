@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-24",
+  "baseline_report": "results/Perfomance_Test_20261023",
+  "baseline_metadata_sha256": "8f88aaee7c6af6f698a40d2805e9120fa141a82131f8778250f216827d04010e",
+  "baseline_predictions_sha256": "2ddd698389af291559bdb69ea9ff4663bb9e9c26384fb1f9f745065da88fad08",
+  "study_splits": "outputs/e1_feature_study_accent_40000/speaker_splits.csv",
+  "study_splits_sha256": "428937b39eb646a41e46b8ee3cdeb86652069802a675575892e6f17e289b8581",
+  "dataset_id": "899dd94a72cff7dc6536993ea0c91ce0aed927a80983050b781c0b71d2f0f4ba",
+  "models": [
+    {
+      "id": "svm65_261024",
+      "artifact": "svm_65_c_261024.joblib",
+      "source": "E1_Feature_EngineeringV4/outputs/e1_feature_study_accent_40000/svm_calibrated_probability_testing/svm_65_calibrated.joblib",
+      "sha256": "804197fababe7b29819d7dee73ce3109651d4b17b6bf8417b92729c1de89b5c1",
+      "metadata_sha256": "686cd9bc7bc7f869a83bd98f1e941a1ea31127ae539db71ed60c5f4c0c6dd80f",
+      "decision_rule": "calibrated_0.50"
+    },
+    {
+      "id": "fusion65_261024",
+      "artifact": "fusion_svm_c_261024.joblib",
+      "source": "E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/calibrated_probability_testing/fusion_svm_calibrated.joblib",
+      "sha256": "d2eb00c072bf8c9f2e465ad19e2ec52c214831dcbbc3f871537d023cdcfd589c",
+      "metadata_sha256": "86f6bde819c653dc5cdf6eeac21583ac5766c1e2ac3f19b0c2b994509d9fa646",
+      "decision_rule": "calibrated_0.50"
+    }
+  ],
+  "feature_cache_sha256": {
+    "mnsc_part1_unseen_3000": "ea201edf8294bcb70b363d712135901b764a7037c4aff7b93140dde6216b1cb1",
+    "mnsc_part2_unseen_3000": "690c5981108b64cfaa676baf7cab44898ddbd647a07bcbb3285f80043a11531f",
+    "cv_unseen_3000": "b557ff4002cc4be10596b4056264838e8d3357bdd722a43db0d6b42d32ad5c32"
+  },
+  "method": "Same 9000 fixed clips and frozen model decision rules. Primary results use training-consistent Part 2 preparation and fresh embeddings; the original raw Part 2 protocol is retained separately.",
+  "cache_regeneration": "Use the 20261023 prepare_clips.py and reproduce.py scripts with the original CUDA bfloat16 settings. Regenerated archives must match the recorded hashes; otherwise document a new extraction rather than claiming exact cache identity.",
+  "preprocessing_correction": {
+    "reason": "Original Part 2 evaluation bypassed training/MVP loudness normalization. Historical raw-input results are now kept as a separate stress test.",
+    "cache_path": "outputs/performance_test_20261024_prepared/part2_preprocessing_features.npz",
+    "cache_sha256": "d3abf9a76e95c3209ccd664de8024a819cc53c883aaccd2c07dac4a0810fd52b",
+    "audio_preparation": "16 kHz mono; 25 ms frame RMS silence trimming, 10 ms hop, -40 dB relative threshold, 100 ms padding; target RMS -20 dBFS, peak limit 0.99; PCM16 FLAC quantization/decode.",
+    "duration_policy": "All 3000 trimmed clips are within 3-6 seconds; no exclusions or cropping.",
+    "acoustic_ablation_variants": [
+      "original_raw",
+      "trim_only",
+      "normalize_only",
+      "trim_and_normalize"
+    ],
+    "fusion_preparation": "Both acoustic features and Whisper embeddings freshly extracted from trimmed/normalized/quantized waveforms; original raw embeddings are used only for historical results.",
+    "whisper_device": "cuda",
+    "whisper_dtype": "torch.bfloat16",
+    "whisper_batch_size": 64,
+    "whisper_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "diagnostic_svm91_sha256": "31f517c82c1fc583bf71df9aed00982e31cf2f90d049234f237cf66316e21408",
+    "model_or_threshold_changes": false
+  }
+}

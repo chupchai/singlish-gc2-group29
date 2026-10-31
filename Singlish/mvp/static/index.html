@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Singapore English Accent Classification</title>
+  <link rel="stylesheet" href="/static/styles.css?v=20261027">
+  <script src="/static/recorder.js?v=20261027" defer></script>
+  <script src="/static/app.js?v=20261026" defer></script>
+</head>
+<body>
+  <main class="demo">
+    <header class="page-header">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Singapore English · Research demo</p>
+      <h1>Singapore English Accent Classification</h1>
+      <p class="intro">Record or upload a short English clip to compare ML and Hybrid Feature Fusion predictions and see its transcript.</p>
+    </header>
+
+    <div class="workspace">
+      <section class="card recording" aria-labelledby="recording-title">
+        <div class="section-heading"><span class="step" aria-hidden="true">1</span><h2 id="recording-title">Add your audio</h2></div>
+        <form id="upload-form">
+          <div class="reading-prompt" id="reading-prompt">
+            <p class="prompt-label">Read this sentence</p>
+            <blockquote>“They tried to keep it a secret but he was able to figure out everything”</blockquote>
+            <p class="prompt-hint">Take 3–6 seconds, then stop and preview your recording.</p>
+          </div>
+          <div class="microphone-actions">
+            <button id="record-button" class="record-button" type="button" aria-pressed="false" aria-describedby="reading-prompt recording-status">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></svg>
+              <span id="record-label">Record audio</span>
+            </button>
+            <button id="cancel-recording" class="cancel-recording" type="button" hidden>Cancel</button>
+          </div>
+          <div id="recording-live" class="recording-live" hidden aria-hidden="true"><span class="recording-dot"></span><span id="recording-timer">0:00 / 0:10</span></div>
+          <p id="recording-status" class="recording-status" role="status">Recording stops automatically at 10 seconds.</p>
+          <div class="input-divider" aria-hidden="true">or upload a file</div>
+          <label class="dropzone" id="dropzone" for="audio-file">
+            <svg class="upload-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
+            <span class="upload-label">Choose WAV or FLAC file</span>
+            <span class="drop-hint"><span class="desktop-drop-hint">or drag and drop it here</span><span class="mobile-drop-hint">Tap to browse your files</span></span>
+            <input id="audio-file" type="file" name="audio" accept=".wav,.flac,audio/wav,audio/x-wav,audio/flac,audio/x-flac" aria-label="Choose a WAV or FLAC audio file" aria-describedby="upload-hint file-rule">
+          </label>
+          <p class="upload-hint" id="upload-hint">One speaker · 3–6 seconds recommended. Longer clips use the first six seconds after silence trimming.</p>
+          <p class="file-rule" id="file-rule">WAV / FLAC · up to 10 MiB · maximum 10 seconds</p>
+          <div class="file-info" id="file-info" hidden><span id="filename"></span><span id="filesize"></span></div>
+          <audio id="preview" controls hidden aria-label="Recording preview"></audio>
+          <p id="error" class="error" role="alert" hidden></p>
+          <button id="submit" type="submit" disabled>Classify recording <span aria-hidden="true">→</span></button>
+        </form>
+      </section>
+
+      <section class="card result-panel" id="result-card" aria-labelledby="result-title" aria-live="polite" aria-busy="false">
+        <div class="section-heading"><span class="step" aria-hidden="true">2</span><h2 id="result-title">Accent result</h2></div>
+        <div id="empty-result" class="empty-state">
+          <span class="result-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 13v6m5-10v14m6-19v24m6-19v14m5-10v6"/></svg></span>
+          <h3>Ready to classify</h3>
+          <p class="placeholder">Record or upload audio to see its predicted accent class.</p>
+        </div>
+        <div id="loading" class="empty-state" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <h3>Analysing your recording…</h3>
+          <p class="placeholder">Please wait while ML and Hybrid Feature Fusion process your audio.</p>
+        </div>
+        <div id="result" class="completed-state" hidden>
+          <p class="result-caption">Final result</p>
+          <h3 id="prediction"><span id="prediction-label"></span></h3>
+          <div class="model-comparison" role="group" aria-label="Model predictions" aria-describedby="score-guide">
+            <div class="model-card"><div class="model-identity"><h4>ML</h4><p id="ml-label"></p></div><div class="model-score"><span>Probability</span><strong id="ml-score"></strong></div></div>
+            <div class="model-card ensemble-result"><div class="model-identity"><h4>Hybrid Feature Fusion</h4><p id="ensemble-label"></p></div><div class="model-score"><span>Probability</span><strong id="ensemble-score"></strong></div></div>
+          </div>
+          <p class="score-guide" id="score-guide">Calibrated probability of each predicted accent. Singapore is selected when its probability is at least 50%.</p>
+          <p id="model-agreement" class="model-agreement"></p>
+          <dl class="result-summary"><div><dt>Recording duration</dt><dd id="duration">—</dd></div></dl>
+          <div id="warnings" class="warnings" hidden></div>
+          <section class="transcript" id="transcript" aria-labelledby="transcript-title" aria-live="polite" aria-busy="false">
+            <h4 id="transcript-title">Transcript</h4>
+            <p id="transcript-loading" class="transcript-loading" hidden><span class="spinner small" aria-hidden="true"></span>Transcribing your recording…</p>
+            <p id="transcript-text" class="transcript-text" lang="en" hidden></p>
+            <p id="transcript-raw" class="transcript-raw" lang="en" hidden></p>
+            <p id="transcript-error" class="transcript-error" hidden></p>
+            <p class="detail-note">Automatic transcript from a fine-tuned Whisper small model with temperature-fallback decoding. It can contain errors.</p>
+          </section>
+          <details class="model-details">
+            <summary>Model details</summary>
+            <dl class="result-details">
+              <div><dt>ML</dt><dd>E1 · Acoustic SVM</dd></div>
+              <div><dt>Hybrid Feature Fusion</dt><dd>E4 · Acoustic + Whisper fusion SVM</dd></div>
+              <div><dt>Audio classified</dt><dd id="classified-duration"></dd></div>
+              <div><dt>ML version</dt><dd id="ml-version"></dd></div>
+              <div><dt>Hybrid Feature Fusion version</dt><dd id="model-version"></dd></div>
+            </dl>
+            <p class="detail-note">Probabilities refer to each model’s predicted class. Agreement compares the two predicted classes. Speech detection and audio quality scoring are not available.</p>
+          </details>
+        </div>
+        <p class="result-note">Experimental result. It does not determine nationality or identity.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p class="privacy-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Audio is processed for this request and not retained.</p>
+      <p>Research prototype · Results may be incorrect.</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+dataset,subset,model,artifact,clips,correct,errors,correct_pct,metric
+mnsc_part2_unseen_3000,fixed_3000,svm65_261024,svm_65_c_261024.joblib,3000,1608,1392,53.6,recall
+mnsc_part2_unseen_3000,speaker_independent,svm65_261024,svm_65_c_261024.joblib,3000,1608,1392,53.6,recall
+mnsc_part2_unseen_3000,fixed_3000,fusion65_261024,fusion_svm_c_261024.joblib,3000,2751,249,91.7,recall
+mnsc_part2_unseen_3000,speaker_independent,fusion65_261024,fusion_svm_c_261024.joblib,3000,2751,249,91.7,recall
+mnsc_part2_unseen_3000,fixed_3000,svm65,svm_65_calibrated.joblib,3000,1603,1397,53.43333333333333,recall
+mnsc_part2_unseen_3000,speaker_independent,svm65,svm_65_calibrated.joblib,3000,1603,1397,53.43333333333333,recall
+mnsc_part2_unseen_3000,fixed_3000,fusion65,fusion_svm_calibrated.joblib,3000,2797,203,93.23333333333333,recall
+mnsc_part2_unseen_3000,speaker_independent,fusion65,fusion_svm_calibrated.joblib,3000,2797,203,93.23333333333333,recall

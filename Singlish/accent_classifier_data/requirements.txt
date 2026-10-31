@@ -1,0 +1,9 @@
+datacollective==0.6.4
+python-dotenv==1.2.4
+numpy==2.5.2
+pandas==3.0.5
+pyarrow==25.0.1
+soundfile==0.14.0
+soxr==1.1.0
+huggingface_hub==1.29.0
+requests==2.32.5

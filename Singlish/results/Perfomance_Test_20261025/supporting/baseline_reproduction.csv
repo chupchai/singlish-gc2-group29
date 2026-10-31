@@ -1,0 +1,7 @@
+dataset,model,clips,prediction_differences,max_probability_difference
+mnsc_part1_unseen_3000,svm65_261024,3000,0,0.0
+mnsc_part1_unseen_3000,fusion65_261024,3000,0,0.0
+mnsc_part2_unseen_3000,svm65_261024,3000,0,0.0
+mnsc_part2_unseen_3000,fusion65_261024,3000,0,0.0
+cv_unseen_3000,svm65_261024,3000,0,0.0
+cv_unseen_3000,fusion65_261024,3000,0,0.0

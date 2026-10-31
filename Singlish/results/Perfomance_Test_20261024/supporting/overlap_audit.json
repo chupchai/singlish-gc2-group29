@@ -1,0 +1,44 @@
+{
+  "mnsc_part1_unseen_3000": {
+    "clips": 3000,
+    "speakers": 157,
+    "fit_speaker_overlap": 0,
+    "clips_with_fit_speakers": 0,
+    "speaker_independent_clips": 3000,
+    "fit_clip_id_overlap": 0,
+    "all_study_clip_id_overlap": 0,
+    "speaker_overlap_by_split": {
+      "train": 0,
+      "validation": 0,
+      "test": 157
+    }
+  },
+  "mnsc_part2_unseen_3000": {
+    "clips": 3000,
+    "speakers": 160,
+    "fit_speaker_overlap": 0,
+    "clips_with_fit_speakers": 0,
+    "speaker_independent_clips": 3000,
+    "fit_clip_id_overlap": 0,
+    "all_study_clip_id_overlap": 0,
+    "speaker_overlap_by_split": {
+      "train": 0,
+      "validation": 0,
+      "test": 160
+    }
+  },
+  "cv_unseen_3000": {
+    "clips": 3000,
+    "speakers": 2469,
+    "fit_speaker_overlap": 396,
+    "clips_with_fit_speakers": 446,
+    "speaker_independent_clips": 2554,
+    "fit_clip_id_overlap": 137,
+    "all_study_clip_id_overlap": 378,
+    "speaker_overlap_by_split": {
+      "train": 319,
+      "validation": 77,
+      "test": 425
+    }
+  }
+}

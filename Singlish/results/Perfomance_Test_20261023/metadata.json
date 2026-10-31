@@ -1,0 +1,195 @@
+{
+  "datasets": {
+    "mnsc_part1_unseen_3000": {
+      "clips": 3000,
+      "speakers": 157,
+      "label": 1,
+      "seed": 20261021,
+      "manifest_sha256": "bc5d031e20ae8a0c01889b0ce066e4f0b1a7d8e72ea684dd0f383c435b56d72f",
+      "original_prepared_parquet_sha256": {
+        "part-00000.parquet": "c6b51ac178b8150a2c4ec49aaf268c0903807493c3f1dabded7a52600b4dc83b",
+        "part-00001.parquet": "72ac0e66e4f7d37ff3078eece54c36bed129314c10a530b628a8a4c67c48039a",
+        "part-00002.parquet": "8d00999e8807fa0071d7208121ed0127aaf0c53f7f8cf0066962c0332b37ffc4"
+      },
+      "train_validation_speaker_overlap": {
+        "previous": 0,
+        "latest": 0
+      },
+      "source": {
+        "repo": "AudioLLMs/Multitask-National-Speech-Corpus-v1-extend",
+        "revision": "fb35c8c24be1056293c511ae47177e915a3ed757",
+        "url": "https://huggingface.co/datasets/AudioLLMs/Multitask-National-Speech-Corpus-v1-extend",
+        "files": [
+          "ASR-PART1-Train/train-00031-of-00772.parquet",
+          "ASR-PART1-Train/train-00183-of-00772.parquet",
+          "ASR-PART1-Train/train-00206-of-00772.parquet",
+          "ASR-PART1-Train/train-00364-of-00772.parquet",
+          "ASR-PART1-Train/train-00374-of-00772.parquet",
+          "ASR-PART1-Train/train-00391-of-00772.parquet",
+          "ASR-PART1-Train/train-00497-of-00772.parquet",
+          "ASR-PART1-Train/train-00509-of-00772.parquet",
+          "ASR-PART1-Train/train-00531-of-00772.parquet",
+          "ASR-PART1-Train/train-00561-of-00772.parquet",
+          "ASR-PART1-Train/train-00707-of-00772.parquet",
+          "ASR-PART1-Train/train-00758-of-00772.parquet"
+        ]
+      },
+      "processing": "cv_utils.preprocess_waveform(3,6), PCM16 FLAC"
+    },
+    "mnsc_part2_unseen_3000": {
+      "clips": 3000,
+      "speakers": 160,
+      "label": 1,
+      "seed": 20261022,
+      "manifest_sha256": "f0ee52b01f9b52369de271a4e781e7a63445a06ca5aefc85a8f17ee32a7d30c3",
+      "original_prepared_parquet_sha256": {
+        "part-00000.parquet": "a6c3e68f0c34b569b50f4588030f12c39a3c3799434b6ce83ee2f25403e28849",
+        "part-00001.parquet": "8b50464b58c789e332d81ad0347bf3f8dcefd3e00bd78db55cdca445f81019de",
+        "part-00002.parquet": "3b5d7d42f9c216ba9c1a1311f5cffd7cf6d2aa159f47faf4e449b3f6c70a2524"
+      },
+      "train_validation_speaker_overlap": {
+        "previous": 0,
+        "latest": 0
+      },
+      "source": {
+        "repo": "AudioLLMs/Multitask-National-Speech-Corpus-v1-extend",
+        "revision": "fb35c8c24be1056293c511ae47177e915a3ed757",
+        "url": "https://huggingface.co/datasets/AudioLLMs/Multitask-National-Speech-Corpus-v1-extend",
+        "files": [
+          "ASR-PART2-Train/train-00108-of-00728.parquet",
+          "ASR-PART2-Train/train-00167-of-00728.parquet",
+          "ASR-PART2-Train/train-00170-of-00728.parquet",
+          "ASR-PART2-Train/train-00190-of-00728.parquet",
+          "ASR-PART2-Train/train-00255-of-00728.parquet",
+          "ASR-PART2-Train/train-00265-of-00728.parquet",
+          "ASR-PART2-Train/train-00308-of-00728.parquet",
+          "ASR-PART2-Train/train-00401-of-00728.parquet",
+          "ASR-PART2-Train/train-00457-of-00728.parquet",
+          "ASR-PART2-Train/train-00470-of-00728.parquet",
+          "ASR-PART2-Train/train-00508-of-00728.parquet",
+          "ASR-PART2-Train/train-00629-of-00728.parquet",
+          "ASR-PART2-Train/train-00636-of-00728.parquet",
+          "ASR-PART2-Train/train-00689-of-00728.parquet"
+        ]
+      },
+      "processing": "original mono 16 kHz PCM16, lossless FLAC only"
+    },
+    "cv_unseen_3000": {
+      "clips": 3000,
+      "speakers": 2469,
+      "label": 0,
+      "seed": 20261023,
+      "manifest_sha256": "c490e6c57699b59df8393faf46689c530db60b577bfad8e800150d8510524217",
+      "original_prepared_parquet_sha256": {
+        "part-00000.parquet": "48930484b5e4a60b5896424cec903eed0e19952a309c986ad993330c200475b9",
+        "part-00001.parquet": "8823b2f779755c12834b0b8723909235b71890390411c67e1ab7c21a56068dd6",
+        "part-00002.parquet": "4a1f9dc0aef35f0ce4c11cd13cd4610fff4d10b392f1e8a7f241ad40a9373aca"
+      },
+      "train_validation_speaker_overlap": {
+        "previous": 0,
+        "latest": 0
+      },
+      "source": {
+        "dataset": "Common Voice Scripted Speech 26.0 English",
+        "url": "https://mozilladatacollective.com/",
+        "archive": "common-voice-scripted-speech-26-0-english.tar.gz",
+        "clip_path": "cv-corpus-26.0-2026-06-12/en/clips/{source_clip_id}.mp3"
+      },
+      "processing": "cv_utils.preprocess_waveform(3,6), PCM16 FLAC",
+      "sampling": "fixed random sample of 3000 from 4955 unused prepared candidates; no accent quotas",
+      "accent_counts": {
+        "American": 1324,
+        "British": 760,
+        "South Asian": 435,
+        "Filipino": 264,
+        "Australian": 217
+      },
+      "full_study_recording_overlap": {
+        "previous": 0,
+        "latest": 0
+      }
+    }
+  },
+  "models": [
+    {
+      "id": "svm65",
+      "name": "Latest SVM65",
+      "artifact": "svm_65_calibrated.joblib",
+      "release": "mvp-svm65-rc-20261023",
+      "url": "https://github.com/nuswohc/Singlish/releases/download/mvp-svm65-rc-20261023/svm_65_calibrated.joblib",
+      "sha256": "350b4759c4828a0765d114219dba71954db5ab56cac3db1288aaff73a0523ee1",
+      "metadata_sha256": "02f77a27e43a05277508c3db4c5f7565f3fe31ec77df8cfdf177c0c8304161df",
+      "decision_rule": "calibrated_0.50"
+    },
+    {
+      "id": "fusion65",
+      "name": "Latest fusion65",
+      "artifact": "fusion_svm_calibrated.joblib",
+      "release": "mvp-svm65-rc-20261023",
+      "url": "https://github.com/nuswohc/Singlish/releases/download/mvp-svm65-rc-20261023/fusion_svm_calibrated.joblib",
+      "sha256": "8ddf2679ca4994d3c4c394bd8b446bae03ada920b8031a788dadbcaaadf0ab0e",
+      "metadata_sha256": "3af54adcd8306eab04103966056b1c933121767adc77ce665fe658c0b907e60e",
+      "decision_rule": "calibrated_0.50"
+    },
+    {
+      "id": "svm35",
+      "name": "Previous SVM35 (release rule)",
+      "artifact": "svm_35_calibrated.joblib",
+      "release": "mvp-ensemble-20261019",
+      "url": "https://github.com/nuswohc/Singlish/releases/download/mvp-ensemble-20261019/svm_35_calibrated.joblib",
+      "sha256": "6efb32ef69eeb9d106ea35b2af65cf6b7d35f71111801ad858d0efab69fad7d0",
+      "metadata_sha256": "d4f790a3e2b586b108a7aae370d54fe1da591df4e98fd4a3f7a6a7305207ffb5",
+      "decision_rule": "raw_svm"
+    },
+    {
+      "id": "fusion35",
+      "name": "Previous fusion35",
+      "artifact": "fusion_svm.joblib",
+      "release": "mvp-ensemble-20261019",
+      "url": "https://github.com/nuswohc/Singlish/releases/download/mvp-ensemble-20261019/fusion_svm.joblib",
+      "sha256": "1a6dcb4f332167e757b6f5e92a43e9b70438435f04a06fada30bbc3c0ead9eae",
+      "metadata_sha256": "667fa8166d6e8d86d957ca5576397d6b0735a19e802634b5a1710c0d242d2e0e",
+      "decision_rule": "raw_svm"
+    },
+    {
+      "id": "svm35_calibrated",
+      "name": "Previous SVM35 (calibrated rule)",
+      "artifact": "svm_35_calibrated.joblib",
+      "release": "mvp-ensemble-20261019",
+      "url": "https://github.com/nuswohc/Singlish/releases/download/mvp-ensemble-20261019/svm_35_calibrated.joblib",
+      "sha256": "6efb32ef69eeb9d106ea35b2af65cf6b7d35f71111801ad858d0efab69fad7d0",
+      "metadata_sha256": "d4f790a3e2b586b108a7aae370d54fe1da591df4e98fd4a3f7a6a7305207ffb5",
+      "decision_rule": "calibrated_0.50"
+    }
+  ],
+  "whisper": {
+    "model": "openai/whisper-base.en",
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "pooling": "mean real 20 ms encoder frames, ceil(samples/320)",
+    "dtype": "CUDA bfloat16",
+    "batch_size": {
+      "mnsc_part1_unseen_3000": 64,
+      "mnsc_part2_unseen_3000": 64,
+      "cv_unseen_3000": 32
+    }
+  },
+  "runtime": {
+    "librosa": "1.0.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.3",
+    "transformers": "4.57.6",
+    "torch_common_voice": "2.14.0+cu130",
+    "torch_mnsc_cached_features": "2.13.0+cu126",
+    "numpy_mnsc_cached_features": "2.5.1"
+  },
+  "code_sha256": {
+    "mvp/features.py": "5ae1ec829801ff5f3340dc64a4b2f1cc9e79de6deb56545637e2b9e92ae5c91f",
+    "accent_classifier_data/scripts/cv_utils.py": "2f516db5df831150df13a23fcfcab8382c910480bcbea5f4f235d672eaab9913"
+  },
+  "verification": {
+    "saved_class_predictions_checked": 45000,
+    "differences_using_original_feature_caches": 0,
+    "raw_source_common_voice_pcm_check": "passed",
+    "part2_lossless_conversion_pcm_check": "passed"
+  }
+}

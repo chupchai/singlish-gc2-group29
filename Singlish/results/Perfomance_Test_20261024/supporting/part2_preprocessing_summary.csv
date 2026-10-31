@@ -1,0 +1,5 @@
+variant,clips,recall_pct,misses,uncalibrated_recall_pct
+original_raw,3000,53.6,1392,57.766666666666666
+trim_only,3000,56.733333333333334,1298,61.1
+normalize_only,3000,97.2,84,97.93333333333332
+trim_and_normalize,3000,97.2,84,97.93333333333332

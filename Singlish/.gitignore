@@ -1,0 +1,38 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python and notebook-generated files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Temporary files, logs, and local editor settings
+tmp/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Audio and generated artifacts stay in Google Drive.
+data/
+audio/
+cache/
+outputs/
+*.wav
+*.mp3
+*.flac
+*.npz
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx

@@ -1,0 +1,13 @@
+{
+  "python": "3.14.6",
+  "numpy": "2.5.3",
+  "scikit-learn": "1.9.1",
+  "joblib": "1.6.0",
+  "seconds": 26.56301886700021,
+  "reproduce_sha256": "7e7dd4d63b303db30d112393b03196c184380207fe99e29400d254739957e2a0",
+  "metadata_sha256": "3ff8c79d5dbcdc04fc76f25b81eb2d40d359db4e422728ff231a10ddf38dd034",
+  "baseline_predictions_checked": 18000,
+  "baseline_prediction_differences": 0,
+  "method": "Same fixed 9000 clips, cached features, normalized prepared-input protocol and calibrated p_singapore >= 0.50 rule as 24 October. Frozen joblibs; no fitting or threshold tuning.",
+  "limitation": "25 October models were trained on unnormalized float32 audio; this is a direct comparison on the previous normalized benchmark, not an evaluation of their native preprocessing pipeline. Raw Part 2 and SVM65 preparation ablations are reported separately."
+}

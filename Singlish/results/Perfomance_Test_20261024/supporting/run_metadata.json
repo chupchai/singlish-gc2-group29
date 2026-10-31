@@ -1,0 +1,21 @@
+{
+  "python": "3.14.6",
+  "numpy": "2.5.3",
+  "scikit-learn": "1.9.1",
+  "joblib": "1.6.0",
+  "seconds": 34.04561781300072,
+  "reproduce_sha256": "ef0d24335ca5ec47b9865c4bcce61148b95047f44f75c8de800ab4ca885d21ef",
+  "metadata_sha256": "9e0df00da87f5a0c116e5d3e7b99a19322055296c82be5007822c28299c4bcb3",
+  "baseline_predictions_checked": 45000,
+  "baseline_prediction_differences": 0,
+  "part2_preparation": {
+    "prepared_cache_sha256": "d3abf9a76e95c3209ccd664de8024a819cc53c883aaccd2c07dac4a0810fd52b",
+    "clips": 3000,
+    "raw_over_six_seconds": 147,
+    "prepared_min_seconds": 3.0,
+    "prepared_max_seconds": 5.998,
+    "cropped_clips": 0,
+    "discarded_clips": 0
+  },
+  "method": "Frozen joblibs; training-consistent trimmed, normalized PCM16 Part 2 audio with fresh Whisper embeddings. Original raw Part 2 protocol retained in supporting/; no fitting or threshold tuning."
+}

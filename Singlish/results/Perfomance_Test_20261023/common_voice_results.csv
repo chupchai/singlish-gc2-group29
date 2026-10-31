@@ -1,0 +1,6 @@
+model,artifact,decision_rule,clips,correct_non_singapore,false_positives,specificity_pct,false_positive_rate_pct
+Latest SVM65,svm_65_calibrated.joblib,calibrated_0.50,3000,2911,89,97.03333333333333,2.966666666666667
+Latest fusion65,fusion_svm_calibrated.joblib,calibrated_0.50,3000,2965,35,98.83333333333333,1.1666666666666667
+Previous SVM35 (release rule),svm_35_calibrated.joblib,raw_svm,3000,2877,123,95.9,4.1
+Previous fusion35,fusion_svm.joblib,raw_svm,3000,2965,35,98.83333333333333,1.1666666666666667
+Previous SVM35 (calibrated rule),svm_35_calibrated.joblib,calibrated_0.50,3000,2910,90,97.0,3.0

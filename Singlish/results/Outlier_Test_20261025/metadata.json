@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-25T02:56:57.760733+00:00",
+  "clip_root": "/home/mh/nusproj/E1_Feature_Engineering/outlier",
+  "label_source": "All available clips treated as non-Singapore (0), as specified by the user.",
+  "dataset_context": "Non-English Google FLEURS outliers: Malay, Mandarin and Tamil. Source language alone does not verify accent labels; this is an outlier stress test.",
+  "manifest_sha256": "572d021af7e2a7138cecde8edfa4c8ad09cb6e2ff7363fa936f060a3e78bf8e2",
+  "listed_clips": 30,
+  "available_clips": 28,
+  "missing_files": [
+    "malay/malay_01.wav",
+    "malay/malay_02.wav"
+  ],
+  "rejected": [],
+  "clips": [
+    {
+      "file": "malay/malay_03.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "04916207c7da232f25607851b33457c78c2e113fdf46cb6ad7eb6ba278d822c1"
+    },
+    {
+      "file": "malay/malay_04.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "03014e1b48599ff04213fef56b30129ed6001896f589b4e3df6762a7724d548b"
+    },
+    {
+      "file": "malay/malay_05.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "f0de429de1a4bea5c49162c08c8940154bf151713f8bb5feeadad197d7d7addc"
+    },
+    {
+      "file": "malay/malay_06.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "c763063af412e9ab830ecd6182d66ac5273566ba1abf63b37c818bf3756f270d"
+    },
+    {
+      "file": "malay/malay_07.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "bc9498f3e193df34c5bc37d763dce8d8410076d1be16f7bd378e4e1fb49042eb"
+    },
+    {
+      "file": "malay/malay_08.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "e6ca0b5d1cf91e4c9f6a9d64f926b61b2261d3745ea382a84ccd20a6e4012269"
+    },
+    {
+      "file": "malay/malay_09.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "170f6e9cd4600aed6bb5bd49ac47eba7c3a840d384a435d3e4380393e20bfa18"
+    },
+    {
+      "file": "malay/malay_10.wav",
+      "language": "malay",
+      "true_label": 0,
+      "sha256": "b8f1666a23f57fbc5ee2bc8ba9f7a30d35d1d16e4d7e7cf70b5d38bbbcfa458f"
+    },
+    {
+      "file": "mandarin/mandarin_01.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "d49bb00ee7bfa0e5c05b0ae8b2e22c768cdbc3bf77f4000f7a53e5f79d50cbab"
+    },
+    {
+      "file": "mandarin/mandarin_02.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "5ce4dcce8eedd494d4c30f519769994392e601c903596cf461a5728503f46d0d"
+    },
+    {
+      "file": "mandarin/mandarin_03.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "9fe182c75c73b30f2173c9446d6e5c2f039b08bbe61d7c8046cf70803570db67"
+    },
+    {
+      "file": "mandarin/mandarin_04.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "0cfe74ece748f2ecc85a16bb7b3ef6e670fbaabe16f547fb89f317ad5085fcd5"
+    },
+    {
+      "file": "mandarin/mandarin_05.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "095debea1f7def6079c2e5bd56c0deeaf54def312516b61e293fd4b2b7396a04"
+    },
+    {
+      "file": "mandarin/mandarin_06.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "7fc135acd92531a672c3767b9290973985c271d0561c8a965381764bef5aacb6"
+    },
+    {
+      "file": "mandarin/mandarin_07.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "c5e4c67298d9ad4c407038918ece145f1fe148e21577dcd696f1ae0a7347e680"
+    },
+    {
+      "file": "mandarin/mandarin_08.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "89540fa74f1f9910d8bb5eeee551b2e36f6cc64483bc34781c557e9ab16a88a3"
+    },
+    {
+      "file": "mandarin/mandarin_09.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "6786cbaf4c7bf0737be44d780334aa6fb610c65e2c6673a36d543b11f198283b"
+    },
+    {
+      "file": "mandarin/mandarin_10.wav",
+      "language": "mandarin",
+      "true_label": 0,
+      "sha256": "d7945be7e12fdf90423ad225db93624e05565899978ef01ea68bee21f6277853"
+    },
+    {
+      "file": "tamil/tamil_01.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "dd28911b9cc43137ae0171a5ca6eec0c61df1e22a259017f5de803912d26e78a"
+    },
+    {
+      "file": "tamil/tamil_02.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "7d6a4ad635e836c84927939c516bb6dc91a421e4d74787f63bf8d9e13aea767a"
+    },
+    {
+      "file": "tamil/tamil_03.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "cdf7138a767304b0c98ba0b537cf7a7784a8c0fcdeb82508a90058a0ecfab2b5"
+    },
+    {
+      "file": "tamil/tamil_04.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "cb937e29ed4bc804b3b3a0b18953c4d6e2497bc70ad1c7a22069bc959c9cdcb5"
+    },
+    {
+      "file": "tamil/tamil_05.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "a9c6bc11492ebd96173df7926766efdf3aa65ac95cab949545745bdfc424121f"
+    },
+    {
+      "file": "tamil/tamil_06.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "49f631a24fae44bdd423a636147d67ef0a009cf31645d99d28be9e9494b8d763"
+    },
+    {
+      "file": "tamil/tamil_07.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "dfa5eb8e2a07c4f06d61a04dd841ffe612af07c33ebef4a06754185bd50d669d"
+    },
+    {
+      "file": "tamil/tamil_08.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "947eb1f0f35530a89a6263030aefd6677ec5dd083bc7caa31e03a4d71aeaac69"
+    },
+    {
+      "file": "tamil/tamil_09.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "7dde0738d899ea47173e6e9d8c7c48bd3a3df2a1096791b1540a646889063ce9"
+    },
+    {
+      "file": "tamil/tamil_10.wav",
+      "language": "tamil",
+      "true_label": 0,
+      "sha256": "c44a958106ae9b7c56dbe4fa79a5484ce8c1351689cbd1c41ba9edca81c80c9d"
+    }
+  ],
+  "models": {
+    "24": {
+      "artifact": "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261024.joblib",
+      "sha256": "d2eb00c072bf8c9f2e465ad19e2ec52c214831dcbbc3f871537d023cdcfd589c",
+      "metadata_sha256": "86f6bde819c653dc5cdf6eeac21583ac5766c1e2ac3f19b0c2b994509d9fa646",
+      "threshold": 0.5,
+      "preprocessing": "trim_normalize_pcm16"
+    },
+    "25": {
+      "artifact": "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261025.joblib",
+      "sha256": "024bd91dd81993af8fcc0ef2cf78f8318085698f22b4df133bc388e0381cd394",
+      "metadata_sha256": "35e98926239656711751f25884e28afecceb22eabe195a11ce1ebc3a5bedc085",
+      "threshold": 0.5,
+      "preprocessing": "trim_preserve_gain_float32"
+    }
+  },
+  "whisper": {
+    "model": "openai/whisper-base.en",
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "device": "cpu",
+    "dtype": "float32",
+    "pooling": "mean real ceil(samples/320) encoder steps"
+  },
+  "code_sha256": {
+    "mvp/audio.py": "1ab688e9b7df221dd0241a1ecf1bd1737de15959c7c1b588b342d4cb18d05f13",
+    "mvp/features.py": "5ae1ec829801ff5f3340dc64a4b2f1cc9e79de6deb56545637e2b9e92ae5c91f",
+    "mvp/embeddings.py": "392b2a1e6f2feea48ed83375248ac7bdb8ff2a1ad96a927fdd52d5e7125ea293"
+  },
+  "script_sha256": "2318e929ca3ad727806d3ae2884b44c5e892322ce30a72021d92c4fa7e74cbd1",
+  "python": "3.14.6",
+  "numpy": "2.5.3",
+  "sklearn": "1.9.1",
+  "torch": "2.14.0+cpu",
+  "transformers": "4.57.6",
+  "seconds": 39.775871093000205
+}

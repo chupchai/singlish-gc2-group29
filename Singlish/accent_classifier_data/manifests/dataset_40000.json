@@ -1,0 +1,35 @@
+{
+  "clips": 40000,
+  "clips_per_class": 20000,
+  "accent_counts": {
+    "American": 3349,
+    "Australian": 3349,
+    "British": 3349,
+    "Filipino": 3347,
+    "Hong Kong": 2130,
+    "Korean": 329,
+    "Mainland Chinese": 800,
+    "Singaporean": 20000,
+    "South Asian": 3347
+  },
+  "mnsc_part_counts": {
+    "Singaporean (MNSC PART1)": 7500,
+    "Singaporean (MNSC PART2)": 12500
+  },
+  "source_versions": {
+    "Common Voice English 22.0": 5000,
+    "Common Voice English 26.0": 9186,
+    "Common Voice English 27.0": 4685
+  },
+  "selection_manifest": "clips_40000.csv.gz",
+  "manifest_sha256": "87389b0aeb1ac273eff9e669f298b99bc3a73642ead1357d6690aecf5988aad4",
+  "audio_hash": "SHA-256 of ASCII sample rate followed by little-endian interleaved PCM16 samples",
+  "speaker_splits": "Fixed train/val/test assignments from the verified 40,000-clip dataset.",
+  "revisions": {
+    "mnsc": "fb35c8c24be1056293c511ae47177e915a3ed757",
+    "cv22_audio": "7102de82d3e7309f7b987bd73e1f3ad2b53d0f98",
+    "speechocean762": "06385584fad212b26134c656fdd3ccf9f093f33e",
+    "speech_accent_archive": "23016f358efe530a1cda02098da9dd1996cd30d7"
+  },
+  "audio_hash_note": "Reference hashes describe original decoded audio. Preparation receipts record source-replayed PCM hashes because resampling can round a few samples differently across platforms. Source clip identities, pinned revisions, and recorded raw hashes fix the inputs."
+}

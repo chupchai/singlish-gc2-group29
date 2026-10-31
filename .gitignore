@@ -1,0 +1,36 @@
+# --- CDSW / editor defaults ---
+R
+node_modules
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.*
+!.gitignore
+
+# --- Python environments ---
+.venv/
+venv/
+env/
+
+# --- Large models & caches (distribute via release assets, not git) ---
+.local/
+.cache/
+models/
+**/mvp/models/*.joblib
+**/mvp/models/whisper-small-mnsc-sg-15k-heldout/
+**/*.safetensors
+lexicon_db/
+
+# --- Data / audio / archives ---
+*.zip
+*.wav
+*.flac
+*.gz
+test-clips/
+seaborn-data/
+
+# --- Secrets (dotfiles also covered by .* above) ---
+*.token
+*.pem
+*.key
+.env

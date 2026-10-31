@@ -1,0 +1,16 @@
+dataset,model,clips,correct,differences_from_saved_predictions
+mnsc_part1_unseen_3000,svm65,3000,2912,0
+mnsc_part1_unseen_3000,fusion65,3000,2941,0
+mnsc_part1_unseen_3000,svm35,3000,2877,0
+mnsc_part1_unseen_3000,fusion35,3000,2927,0
+mnsc_part1_unseen_3000,svm35_calibrated,3000,2832,0
+mnsc_part2_unseen_3000,svm65,3000,1603,0
+mnsc_part2_unseen_3000,fusion65,3000,2797,0
+mnsc_part2_unseen_3000,svm35,3000,923,0
+mnsc_part2_unseen_3000,fusion35,3000,1283,0
+mnsc_part2_unseen_3000,svm35_calibrated,3000,798,0
+cv_unseen_3000,svm65,3000,2911,0
+cv_unseen_3000,fusion65,3000,2965,0
+cv_unseen_3000,svm35,3000,2877,0
+cv_unseen_3000,fusion35,3000,2965,0
+cv_unseen_3000,svm35_calibrated,3000,2910,0

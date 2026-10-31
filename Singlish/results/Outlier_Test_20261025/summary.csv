@@ -1,0 +1,9 @@
+language,model,available_clips,scored_clips,rejected_clips,correct_non_singapore,false_singapore,specificity_pct,false_positive_rate_pct
+malay,ensemble_261024,8,8,0,7,1,87.5,12.5
+malay,ensemble_261025,8,8,0,5,3,62.5,37.5
+mandarin,ensemble_261024,10,10,0,5,5,50.0,50.0
+mandarin,ensemble_261025,10,10,0,4,6,40.0,60.0
+tamil,ensemble_261024,10,10,0,3,7,30.0,70.0
+tamil,ensemble_261025,10,10,0,3,7,30.0,70.0
+all,ensemble_261024,28,28,0,15,13,53.57142857142857,46.42857142857143
+all,ensemble_261025,28,28,0,12,16,42.857142857142854,57.14285714285714

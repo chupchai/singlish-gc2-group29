@@ -1,0 +1,8 @@
+{
+    name: 'Python-template',
+    skipInAirgap: true,
+    scripts: [
+        'entry.py',
+        'predict.py'
+        ]
+}

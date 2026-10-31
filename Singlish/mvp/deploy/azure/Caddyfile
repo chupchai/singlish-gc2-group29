@@ -1,0 +1,6 @@
+singlish-demo-4e04e8d0.eastasia.cloudapp.azure.com {
+    request_body {
+        max_size 11MB
+    }
+    reverse_proxy app:8000
+}
