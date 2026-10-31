@@ -102,7 +102,6 @@ dataset_data = {}
 for config_name, max_rows in CONFIGS.items():
     print(f"\n--- Loading {config_name} ---")
     
-    # Load dataset using datasets library
     print(f"Loading: AudioLLMs/Multitask-National-Speech-Corpus-v1-extend, config={config_name}")
     
     dataset = load_dataset(
@@ -119,7 +118,6 @@ for config_name, max_rows in CONFIGS.items():
     df_temp = dataset.to_pandas()
     print(f"DataFrame columns: {list(df_temp.columns)}")
     
-    # Take only the required rows
     df_subset = df_temp.head(max_rows)
     
     dataset_data[config_name] = {
@@ -145,19 +143,14 @@ for config_name, data in dataset_data.items():
     print(f"\n{config_name}: Processing {max_rows:,} rows")
     
     for idx, row_dict in df.iterrows():
-        # Get reference_raw from 'answer' column
         reference_raw = row_dict.get("answer", "")
         
-        # Normalize reference
         reference_eval = normalize_reference(reference_raw)
         
-        # Count labeled speakers
         num_labeled_speakers = count_labeled_speakers(reference_raw, row_dict)
         
-        # Check Singlish marker
         has_singlish_marker = has_singlish(reference_eval)
         
-        # Build sample_id
         sample_id = f"{config_name}_{idx:06d}"
         
         record = {
@@ -183,7 +176,6 @@ print("=" * 70)
 
 df = pd.DataFrame(records)
 
-# Verify required columns
 required_columns = [
     "sample_id",
     "dataset",
@@ -219,27 +211,22 @@ print("=" * 70)
 
 print(f"\nTotal rows: {len(df):,}")
 
-# Rows by config
 print("\nRows by config:")
 for config in CONFIGS.keys():
     count = len(df[df["config"] == config])
     print(f"  {config}: {count:,}")
 
-# Singlish rate
 singlish_count = df["has_singlish_marker"].sum()
 singlish_rate = singlish_count / len(df) * 100
 print(f"\nSinglish markers found: {singlish_count:,} ({singlish_rate:.2f}%)")
 
-# Multi-speaker rate
 multi_speaker_count = (df["num_labeled_speakers"] > 1).sum()
 multi_speaker_rate = multi_speaker_count / len(df) * 100
 print(f"Multi-speaker samples: {multi_speaker_count:,} ({multi_speaker_rate:.2f}%)")
 
-# Average speakers
 avg_speakers = df["num_labeled_speakers"].mean()
 print(f"Average speakers per sample: {avg_speakers:.2f}")
 
-# First 5 rows
 print("\nFirst 5 rows:")
 print(df.head().to_string())
 

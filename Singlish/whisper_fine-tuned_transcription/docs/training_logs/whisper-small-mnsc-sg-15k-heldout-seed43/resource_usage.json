@@ -1,0 +1,75 @@
+{
+  "optimizer_steps_measured": 5059,
+  "median_s_per_step": 1.36,
+  "mean_s_per_step": 1.387,
+  "peak_rss_mb_process_plus_children": 1960.4,
+  "peak_working_set_mb_main_process": 2647.3,
+  "peak_vram_allocated_mb": 4787.6,
+  "peak_vram_reserved_mb": 5330.0,
+  "eval_runtimes_s": [
+    73.14,
+    71.13,
+    70.12,
+    69.67,
+    70.54,
+    70.38
+  ],
+  "eval_samples_used": 1411,
+  "full_val_samples": 1411,
+  "full_run_steps_per_epoch": 1689,
+  "full_run_epochs": 3,
+  "full_run_eval_steps": 844,
+  "full_run_n_evals": 7,
+  "full_eval_runtime_est_s": 70.5,
+  "checkpoint_save_overhead_s": 3.4,
+  "full_run_estimate_hours": 2.06,
+  "hyperparameters": {
+    "run_name": "whisper-small-mnsc-sg-15k-heldout-seed43",
+    "data_name": "part3_15k_heldout",
+    "learning_rate": 2e-05,
+    "warmup_ratio": 0.0,
+    "warmup_steps_arg": 0,
+    "warmup_steps_resolved": 0,
+    "seed": 43,
+    "epochs": 3,
+    "max_steps": -1,
+    "total_steps": 5067,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "lr_scheduler_type": "linear",
+    "weight_decay": 0.0,
+    "optim": "adamw_torch_fused"
+  },
+  "eval_history": [
+    {
+      "step": 844,
+      "epoch": 0.49985193959135327,
+      "eval_loss": 0.7213168740272522
+    },
+    {
+      "step": 1688,
+      "epoch": 0.9997038791827065,
+      "eval_loss": 0.6805887222290039
+    },
+    {
+      "step": 2532,
+      "epoch": 1.4992596979567663,
+      "eval_loss": 0.6757239699363708
+    },
+    {
+      "step": 3376,
+      "epoch": 1.9991116375481197,
+      "eval_loss": 0.6626885533332825
+    },
+    {
+      "step": 4220,
+      "epoch": 2.4986674563221793,
+      "eval_loss": 0.6955257058143616
+    },
+    {
+      "step": 5064,
+      "epoch": 2.9985193959135326,
+      "eval_loss": 0.6911730170249939
+    }
+  ]
+}

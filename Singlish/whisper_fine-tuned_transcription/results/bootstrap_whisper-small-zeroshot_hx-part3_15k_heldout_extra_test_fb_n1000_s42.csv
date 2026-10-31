@@ -1,0 +1,5 @@
+file,group,cluster_unit,n_rows,n_clusters,metric,estimate,ci_low,ci_high,boot_mean,boot_std,n_boot,confidence,seed
+eval_whisper-small-zeroshot_hx-part3_15k_heldout_extra_test_fb.csv,PART3-heldout-train-clips,conversation,1969,40,WER,0.335003048442523,0.3099730875665095,0.3590494395260769,0.33445618270317357,0.012405488401260151,1000,0.95,42
+eval_whisper-small-zeroshot_hx-part3_15k_heldout_extra_test_fb.csv,PART3-heldout-train-clips,conversation,1969,40,CER,0.2386151091444082,0.21942410847924315,0.2572789577712664,0.23829883450858824,0.009854402183327766,1000,0.95,42
+eval_whisper-small-zeroshot_hx-part3_15k_heldout_extra_test_fb.csv,Overall,stratified,1969,40,WER,0.335003048442523,0.3099730875665095,0.3590494395260769,0.33445618270317357,0.012405488401260151,1000,0.95,42
+eval_whisper-small-zeroshot_hx-part3_15k_heldout_extra_test_fb.csv,Overall,stratified,1969,40,CER,0.2386151091444082,0.21942410847924315,0.2572789577712664,0.23829883450858824,0.009854402183327766,1000,0.95,42
