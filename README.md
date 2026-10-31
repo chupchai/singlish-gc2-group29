@@ -110,6 +110,16 @@ lexicon correction are all available from the page.
 - Do **not** commit models, audio, datasets, caches, or credentials — the
   `.gitignore` is configured to keep them out.
 
+## Training & evaluation
+
+Model development evidence (training guides, notebooks, hyperparameters, and
+evaluation results) is kept alongside the application for reference:
+
+- **Classifier training guides & notebooks:** [`Singlish/training/`](Singlish/training)
+- **Fine-tuned Whisper evaluation & docs:** [`Singlish/whisper_fine-tuned_transcription/`](Singlish/whisper_fine-tuned_transcription)
+
+These folders are documentation only and are not required to run the app.
+
 ## Upstream / team repository
 
 The accent classifier, fusion ensemble, fine-tuned Whisper model, and the base
