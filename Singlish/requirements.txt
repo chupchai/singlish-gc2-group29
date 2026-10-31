@@ -1,0 +1,21 @@
+# Core application: accent classifier + fine-tuned Whisper transcription.
+# Versions mirror the upstream team repository (mvp/requirements.txt).
+librosa==1.0.0
+scikit-learn==1.9.1       # required to unpickle the SVM / fusion .joblib models
+numpy==2.5.3
+scipy==1.18.1
+joblib==1.6.0
+soundfile==0.14.0
+numba==0.68.0
+soxr==1.1.0
+fastapi==0.142.2
+uvicorn==0.54.0
+python-multipart==0.0.32  # required by FastAPI for multipart file uploads
+starlette==1.7.0
+torch==2.14.0
+transformers==4.57.6
+
+# Singlish lexicon vector-database correction stage.
+lancedb>=0.13.0
+sentence-transformers>=3.0.0
+metaphone>=0.6

@@ -46,8 +46,7 @@ Singlish/                 # the application
 ```bash
 cd Singlish
 python3 -m venv .venv && source .venv/bin/activate
-pip install fastapi uvicorn torch torchaudio transformers \
-            sentence-transformers lancedb metaphone librosa joblib numpy soundfile
+pip install -r requirements.txt
 ```
 
 ### 2. Download the models
