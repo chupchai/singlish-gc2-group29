@@ -15,7 +15,7 @@ env/
 # --- Large models & caches (distribute via release assets, not git) ---
 .local/
 .cache/
-models/
+/models/
 **/mvp/models/*.joblib
 **/mvp/models/whisper-small-mnsc-sg-15k-heldout/
 **/*.safetensors
