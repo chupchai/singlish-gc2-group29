@@ -57,9 +57,10 @@ and unzip them **from the `Singlish/` folder** so they land in `mvp/models/`:
 
 ```bash
 # from the Singlish/ directory
-curl -LO <release-url>/ml.zip            # svm_65_c_261024.joblib + metadata
-curl -LO <release-url>/ensemble.zip      # fusion_svm_c_261029.joblib + metadata
-curl -LO <release-url>/transcription.zip # whisper-small-mnsc-sg-15k-heldout/
+REL=https://github.com/chupchai/singlish-gc2-group29/releases/download/models-20261029
+curl -LO $REL/ml.zip            # svm_65_c_261024.joblib + metadata
+curl -LO $REL/ensemble.zip      # fusion_svm_c_261029.joblib + metadata
+curl -LO $REL/transcription.zip # whisper-small-mnsc-sg-15k-heldout/
 unzip -o ml.zip && unzip -o ensemble.zip && unzip -o transcription.zip
 rm ml.zip ensemble.zip transcription.zip
 ```
@@ -109,3 +110,14 @@ lexicon correction are all available from the page.
   512-value encoder embedding). After that you can set `HF_HUB_OFFLINE=1`.
 - Do **not** commit models, audio, datasets, caches, or credentials — the
   `.gitignore` is configured to keep them out.
+
+## Upstream / team repository
+
+The accent classifier, fusion ensemble, fine-tuned Whisper model, and the base
+web application were developed by the team in the upstream repository, whose
+full commit history reflects the overall effort spent on the project:
+
+- **Team repository:** <https://github.com/nuswohc/Singlish>
+
+This repository builds on that work and adds the Singlish lexicon vector-database
+correction stage (LanceDB) and the accent-gated before/after transcript display.
